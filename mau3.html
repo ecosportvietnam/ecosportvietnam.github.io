@@ -81,13 +81,7 @@ void draw1(String t1, String t2,  s1, s2, f1, f2, c1, c2, n)
 		var f2 = document.getElementById('f2').value;
 		var c1 = document.getElementById('c1').value;
 		var c2 = document.getElementById('c2').value;
-		var radios = document.getElementsByName('n');
-		for (var i = 0, length = radios.length; i < length; i++) {
-			if (radios[i].checked) {
-				var n = radios[i].value;
-				break;
-				}
-		}
+		var n = document.getElementById('n').value;
 		pjs.draw1(t1,t2,s1,s2,f1,f2,c1,c2,n); 
 		var dataUrl = document.getElementsByTagName("canvas")[0].toDataURL();
 		dataUrl = dataUrl.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
@@ -106,11 +100,9 @@ void draw1(String t1, String t2,  s1, s2, f1, f2, c1, c2, n)
 <div style='float:right'>
 <a href="help.html" class="w3-bar-item w3-button">🛈</a>
 </div>
+	<font class="w3-bar-item w3-text-dark-grey">Gõ chữ vào các ô dưới, chọn cỡ, phông, màu chữ & màu nền.</font>
 </div>
-
-<div class="main"><center>
-
-<p class="w3-text-dark-grey">Gõ chữ vào các ô dưới, chọn cỡ, phông, màu chữ & màu nền. Vẽ xong thì click vào ảnh để tải về.</p>
+<center>
 <table>
 <tr><td>Dòng 1</td>
 <td><input type="textfield" value="NẾU PHIỀN XIN GỌI" id="t1" size="30" oninput="drawall1()"></td>
@@ -143,7 +135,13 @@ void draw1(String t1, String t2,  s1, s2, f1, f2, c1, c2, n)
   <option value="1">Vàng</option>
   <option value="2" selected>Đỏ</option>
   <option value="3">Đen</option>
-</select></td></tr>
+</select></td>
+<td rowspan="2">Màu nền: <select id="n" oninput="drawall1()">
+  <option value="0">Trắng</option>
+  <option value="1" selected>Vàng</option>
+  <option value="2">Đỏ</option>
+  <option value="3">Đen</option>
+ </select></td></tr>
 <tr><td>Dòng 2</td>
 <td><input type="textfield" value="09 . 69 . 69 . 69 . 69" id="t2" size="30" oninput="drawall1()"></td>
 <td>cỡ</td>
@@ -177,8 +175,9 @@ void draw1(String t1, String t2,  s1, s2, f1, f2, c1, c2, n)
   <option value="3" selected>Đen</option>
 </select></td></tr>
 </table>
-<p>Màu nền: Trắng<input type="radio" name="n" value="0" onchange="drawall1()" /> Vàng<input type="radio" name="n" value="1" checked="checked" onchange="drawall1()" /> Đỏ<input type="radio" name="n" value="2" onchange="drawall1()" /> Đen<input type="radio" name="n" value="3" onchange="drawall1()" /></p>
-<p><a href="#" id="link1" download="decan.png"><canvas id="canvas"></canvas></a></p>
-</div></center>
+</center></div>
+<div class="main">
+<p class="w3-center"><a href="#" id="link1" download="decan.png"><canvas id="canvas"></canvas></a></p>
+</div>
 </body>
 </html>
