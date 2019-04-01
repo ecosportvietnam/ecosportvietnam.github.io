@@ -1,0 +1,410 @@
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Ecosport MB (Mini SUV)</title>
+<script src="processing.min.js"></script>
+<script type="text/processing" data-processing-target="canvas1">
+void setup()
+{
+  	size(1256,600);
+  	a1 = loadImage("mau1.png");
+  	fonts = [loadFont("arial"), loadFont("courier"), loadFont("symbol"), loadFont("times"), loadFont("verdana")];
+  	R = [255, 249, 218];
+  	G = [255, 195, 37];
+  	B = [255, 45, 44];
+}
+void draw(){  
+}
+void draw1(String t1, String t2, String t3, s1, s2, s3, f1, f2, f3, c1, c2, c3)
+{
+	image(a1,0,0,1256,600);
+
+	fill(R[c1],G[c1],B[c1]);	
+  	textFont(fonts[f1], s1); 
+	w1 = textWidth(t1);
+	text(t1,628-w1/2,310);
+	
+	fill(R[c2],G[c2],B[c2]);	
+  	textFont(fonts[f2], s2); 
+	w2 = textWidth(t2);
+	text(t2,628-w2/2,400);
+	
+	fill(R[c3],G[c3],B[c3]);	
+  	textFont(fonts[f3], s3); 
+	w3 = textWidth(t3);
+	text(t3,628-w3/2,505);
+}
+</script>
+<script type="text/processing" data-processing-target="canvas2">
+void setup()
+{
+  	size(640,360);
+  	a2 = loadImage("mau2.png");
+  	fonts = [loadFont("arial"), loadFont("courier"), loadFont("symbol"), loadFont("times"), loadFont("verdana")];
+  	R = [255, 249, 218,32];
+  	G = [255, 195, 37,26];
+  	B = [255, 45, 44,26];
+  	W = 640
+  	H = 360
+}
+void draw(){  
+}
+void draw2(String t1, String t2, String t3, s1, s2, s3, f1, f2, f3, c1, c2, c3,n)
+{
+	background(R[n],G[n],B[n]);
+	image(a2,0,0,W,H);
+	
+	fill(R[c1],G[c1],B[c1]);	
+  	textFont(fonts[f1], s1); 
+	w1 = textWidth(t1);
+	text(t1,W/2-w1/2,H/2+38);
+	
+	fill(R[c2],G[c2],B[c2]);	
+  	textFont(fonts[f2], s2); 
+	w2 = textWidth(t2);
+	text(t2,W/2-w2/2,H/2+82);
+	
+	fill(R[c3],G[c3],B[c3]);	
+  	textFont(fonts[f3], s3); 
+	w3 = textWidth(t3);
+	text(t3,W/2-w3/2,H/2+150);
+}
+</script>
+<script type="text/processing" data-processing-target="canvas3">
+void setup()
+{
+  	size(1255,300);
+  	a3 = loadImage("mau3.png");
+  	fonts = [loadFont("arial"), loadFont("courier"), loadFont("symbol"), loadFont("times"), loadFont("verdana")];
+}
+void draw(){  
+}
+void draw3(String t1, String t2, String t3, String t4, s1, s2, s3, s4, f1, f2, f3, f4)
+{
+	background(220,0,0);
+	image(a3,0,0,600,300);
+	fill(255, 220, 0);
+	
+  	textFont(fonts[f1], s1); 
+	w1 = textWidth(t1);
+	text(t1,930-w1/2,50);
+	
+  	textFont(fonts[f2], s2); 
+	w2 = textWidth(t2);
+	text(t2,930-w2/2,130);
+	
+  	textFont(fonts[f3], s3); 
+	w3 = textWidth(t3);
+	text(t3,930-w3/2,215);
+	
+  	textFont(fonts[f4], s4); 
+	w4 = textWidth(t4);
+	text(t4,930-w4/2,280);
+}
+</script>
+<script type="text/javascript">
+	function drawall1(id) {
+		var pjs = Processing.getInstanceById(id);
+		var t1 = document.getElementById('t11').value;
+		var t2 = document.getElementById('t12').value;
+		var t3 = document.getElementById('t13').value;
+		var s1 = document.getElementById('s11').value;
+		var s2 = document.getElementById('s12').value;
+		var s3 = document.getElementById('s13').value;
+		var f1 = document.getElementById('f11').value;
+		var f2 = document.getElementById('f12').value;
+		var f3 = document.getElementById('f13').value;
+		var c1 = document.getElementById('c11').value;
+		var c2 = document.getElementById('c12').value;
+		var c3 = document.getElementById('c13').value;
+		pjs.draw1(t1,t2,t3,s1,s2,s3,f1,f2,f3,c1,c2,c3); 
+		var dataUrl = document.getElementsByTagName("canvas")[0].toDataURL();
+		dataUrl = dataUrl.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
+		document.getElementById("link1").href = dataUrl;
+	}
+	
+	function drawall2(id) {
+		var pjs = Processing.getInstanceById(id);
+		var t1 = document.getElementById('t21').value;
+		var t2 = document.getElementById('t22').value;
+		var t3 = document.getElementById('t23').value;
+		var s1 = document.getElementById('s21').value;
+		var s2 = document.getElementById('s22').value;
+		var s3 = document.getElementById('s23').value;
+		var f1 = document.getElementById('f21').value;
+		var f2 = document.getElementById('f22').value;
+		var f3 = document.getElementById('f23').value;
+		var c1 = document.getElementById('c21').value;
+		var c2 = document.getElementById('c22').value;
+		var c3 = document.getElementById('c23').value;
+		var n = document.getElementById('n2').value;
+		pjs.draw2(t1,t2,t3,s1,s2,s3,f1,f2,f3,c1,c2,c3,n); 
+		var dataUrl = document.getElementsByTagName("canvas")[1].toDataURL();
+		dataUrl = dataUrl.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
+		document.getElementById("link2").href = dataUrl;
+	}
+
+	function drawall3(id) {
+		var pjs = Processing.getInstanceById(id);
+		var t1 = document.getElementById('t31').value;
+		var t2 = document.getElementById('t32').value;
+		var t3 = document.getElementById('t33').value;
+		var t4 = document.getElementById('t34').value;
+		var s1 = document.getElementById('s31').value;
+		var s2 = document.getElementById('s32').value;
+		var s3 = document.getElementById('s33').value;
+		var s4 = document.getElementById('s34').value;
+		var f1 = document.getElementById('f31').value;
+		var f2 = document.getElementById('f32').value;
+		var f3 = document.getElementById('f33').value;
+		var f4 = document.getElementById('f34').value;
+		pjs.draw3(t1,t2,t3,t4,s1,s2,s3,s4,f1,f2,f3,f4); 
+		var dataUrl = document.getElementsByTagName("canvas")[2].toDataURL();
+		dataUrl = dataUrl.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
+		document.getElementById("link3").href = dataUrl;
+	}
+	
+	function drawall(){
+		drawall2('canvas2');
+		drawall1('canvas1');
+		drawall3('canvas3');
+	}
+</script>
+</head>
+<body onload="drawall()">
+<h2>Trang web tạo đề can</h2>
+
+<p><big id="mau1"><b>Mẫu 1 (Otofun style)</b>  <a href="#mau2">Mẫu 2  (EcoMB style)</a> <a href="#mau3">Mẫu 3  (KMFC style)</a></big></p>
+Gõ chữ vào các ô dưới, chọn cỡ, phông, màu chữ & màu nền. Vẽ xong thì click vào ảnh để tải về.<br/>
+Dòng chữ 1 <input type="textfield" value="XIN LỖI NẾU ĐÃ LÀM PHIỀN!" id="t21" size="30" oninput="drawall2('canvas2')">
+cỡ chữ <select id="s21" oninput="drawall2('canvas2')">
+  <option value="5">5</option>
+  <option value="10">10</option>
+  <option value="20">20</option>
+  <option value="30" selected>30</option>
+  <option value="40">40</option>
+  <option value="50">50</option>
+  <option value="60">60</option>
+</select>
+phông chữ <select id="f21" oninput="drawall2('canvas2')">
+  <option value="0">Arial</option>
+  <option value="1">Courier</option>
+  <option value="2">Symbol</option>
+  <option value="3" selected>Times</option>
+  <option value="4">Verdana</option>
+</select>
+màu chữ <select id="c21" oninput="drawall2('canvas2')">
+  <option value="0">Trắng</option>
+  <option value="1">Vàng</option>
+  <option value="2">Đỏ</option>
+  <option value="3" selected>Đen</option>
+</select>
+<br/>
+Dòng chữ 2 <input type="textfield" value="VUI LÒNG GỌI" id="t22" size="30" oninput="drawall2('canvas2')">
+cỡ chữ <select id="s22" oninput="drawall2('canvas2')">
+  <option value="10">10</option>
+  <option value="20">20</option>
+  <option value="30">30</option>
+  <option value="40" selected>40</option>
+  <option value="50">50</option>
+  <option value="60">60</option>
+  <option value="70">70</option>
+</select>
+phông chữ <select id="f22" oninput="drawall2('canvas2')">
+  <option value="0">Arial</option>
+  <option value="1">Courier</option>
+  <option value="2">Symbol</option>
+  <option value="3" selected>Times</option>
+  <option value="4">Verdana</option>
+</select>
+màu chữ <select id="c22" oninput="drawall2('canvas2')">
+  <option value="0">Trắng</option>
+  <option value="1">Vàng</option>
+  <option value="2">Đỏ</option>
+  <option value="3" selected>Đen</option>
+</select>
+<br/>
+Dòng chữ 3 <input type="textfield" value="0969.969.696" id="t23" size="30" oninput="drawall2('canvas2')">
+cỡ chữ <select id="s23" oninput="drawall2('canvas2')">
+  <option value="40">40</option>
+  <option value="50">50</option>
+  <option value="60">60</option>
+  <option value="70" selected>70</option>
+  <option value="80">80</option>
+  <option value="90">90</option>
+  <option value="100">100</option>
+</select>
+phông chữ <select id="f23" oninput="drawall2('canvas2')">
+  <option value="0" selected>Arial</option>
+  <option value="1">Courier</option>
+  <option value="2">Symbol</option>
+  <option value="3">Times</option>
+  <option value="4">Verdana</option>
+</select>
+màu chữ <select id="c23" oninput="drawall2('canvas2')">
+  <option value="0">Trắng</option>
+  <option value="1">Vàng</option>
+  <option value="2">Đỏ</option>
+  <option value="3" selected>Đen</option>
+</select>
+<br/>
+Màu nền <select id="n2" oninput="drawall2('canvas2')">
+  <option value="0">Trắng</option>
+  <option value="1" selected>Vàng</option>
+  <option value="2">Đỏ</option>
+  <option value="3">Đen</option>
+</select>
+<br/>
+<a href="#" id="link2" download="decan2.png"><canvas id="canvas2"></canvas></a>
+
+<p><big id="mau2"><a href="#mau1">Mẫu 1 (Otofun style)</a> <b>Mẫu 2 (EcoMB style)</b> <a href="#mau3">Mẫu 3 (KMFC style)</a></big></p>
+Gõ chữ vào các ô dưới, chọn cỡ, phông, màu chữ. Vẽ xong thì click vào ảnh để tải về.<br/>
+Dòng chữ 1 <input type="textfield" value="XIN LỖI NẾU ĐỖ XE Ở ĐÂY LÀM PHIỀN!" id="t11" size="30" oninput="drawall1('canvas1')">
+cỡ chữ <select id="s11" oninput="drawall1('canvas1')">
+  <option value="20">20</option>
+  <option value="30">30</option>
+  <option value="40">40</option>
+  <option value="50" selected>50</option>
+  <option value="60">60</option>
+  <option value="70">70</option>
+  <option value="80">80</option>
+</select>
+phông chữ <select id="f11" oninput="drawall1('canvas1')">
+  <option value="0" selected>Arial</option>
+  <option value="1">Courier</option>
+  <option value="2">Symbol</option>
+  <option value="3">Times</option>
+  <option value="4">Verdana</option>
+</select>
+màu chữ <select id="c11" oninput="drawall1('canvas1')">
+  <option value="0" selected>Trắng</option>
+  <option value="1">Vàng</option>
+  <option value="2">Đỏ</option>
+</select>
+<br/>
+Dòng chữ 2 <input type="textfield" value="VUI LÒNG GỌI" id="t12" size="30" oninput="drawall1('canvas1')">
+cỡ chữ <select id="s12" oninput="drawall1('canvas1')">
+  <option value="40">40</option>
+  <option value="50">50</option>
+  <option value="60">60</option>
+  <option value="70" selected>70</option>
+  <option value="80">80</option>
+  <option value="90">90</option>
+  <option value="100">100</option>
+</select>
+phông chữ <select id="f12" oninput="drawall1('canvas1')">
+  <option value="0" selected>Arial</option>
+  <option value="1">Courier</option>
+  <option value="2">Symbol</option>
+  <option value="3">Times</option>
+  <option value="4">Verdana</option>
+</select>
+màu chữ <select id="c12" oninput="drawall1('canvas1')">
+  <option value="0" selected>Trắng</option>
+  <option value="1">Vàng</option>
+  <option value="2">Đỏ</option>
+</select>
+<br/>
+Dòng chữ 3 <input type="textfield" value="09.69.69.69.69" id="t13" size="30" oninput="drawall1('canvas1')">
+cỡ chữ <select id="s13" oninput="drawall1('canvas1')">
+  <option value="60">60</option>
+  <option value="70">70</option>
+  <option value="80">80</option>
+  <option value="90" selected>90</option>
+  <option value="100">100</option>
+  <option value="110">110</option>
+  <option value="120">120</option>
+</select>
+phông chữ <select id="f13" oninput="drawall1('canvas1')">
+  <option value="0" selected>Arial</option>
+  <option value="1">Courier</option>
+  <option value="2">Symbol</option>
+  <option value="3">Times</option>
+  <option value="4">Verdana</option>
+</select>
+màu chữ <select id="c13" oninput="drawall1('canvas1')">
+  <option value="0" selected>Trắng</option>
+  <option value="1">Vàng</option>
+  <option value="2">Đỏ</option>
+</select>
+<br/>
+<a href="#" id="link1" download="decan1.png"><canvas id="canvas1"></canvas></a>
+
+<p><big id="mau3"><a href="#mau1">Mẫu 1 (Otofun style)</a> <a href="#mau2">Mẫu 2 (EcoMB style)</a> <b>Mẫu 3 (KMFC style)</b></big></p>
+Gõ chữ vào các ô dưới, chọn cỡ, phông chữ. Vẽ xong thì click vào ảnh để tải về.<br/>
+Dòng chữ 1 <input type="textfield" value="XIN LỖI ĐÃ LÀM PHIỀN" id="t31" size="30" oninput="drawall3('canvas3')">
+cỡ chữ <select id="s31" oninput="drawall3('canvas3')">
+  <option value="20">20</option>
+  <option value="30">30</option>
+  <option value="40">40</option>
+  <option value="50" selected>50</option>
+  <option value="60">60</option>
+  <option value="70">70</option>
+  <option value="80">80</option>
+</select>
+phông chữ <select id="f31" oninput="drawall3('canvas3')">
+  <option value="0" selected>Arial</option>
+  <option value="1">Courier</option>
+  <option value="2">Symbol</option>
+  <option value="3">Times</option>
+  <option value="4">Verdana</option>
+</select>
+<br/>
+Dòng chữ 2 <input type="textfield" value="GỌI 0912.345.678" id="t32" size="30" oninput="drawall3('canvas3')">
+cỡ chữ <select id="s32" oninput="drawall3('canvas3')">
+  <option value="40">40</option>
+  <option value="50">50</option>
+  <option value="60">60</option>
+  <option value="70" selected>70</option>
+  <option value="80">80</option>
+  <option value="90">90</option>
+  <option value="100">100</option>
+</select>
+phông chữ <select id="f32" oninput="drawall3('canvas3')">
+  <option value="0" selected>Arial</option>
+  <option value="1">Courier</option>
+  <option value="2">Symbol</option>
+  <option value="3">Times</option>
+  <option value="4">Verdana</option>
+</select>
+<br/>
+Dòng chữ 3 <input type="textfield" value="30A 999.99" id="t33" size="30" oninput="drawall3('canvas3')">
+cỡ chữ <select id="s33" oninput="drawall3('canvas3')">
+  <option value="30">30</option>
+  <option value="40">40</option>
+  <option value="50">50</option>
+  <option value="60" selected>60</option>
+  <option value="70">70</option>
+  <option value="80">80</option>
+  <option value="90">90</option>
+</select>
+phông chữ <select id="f33" oninput="drawall3('canvas3')">
+  <option value="0" selected>Arial</option>
+  <option value="1">Courier</option>
+  <option value="2">Symbol</option>
+  <option value="3">Times</option>
+  <option value="4">Verdana</option>
+</select>
+<br/>
+Dòng chữ 4 <input type="textfield" value="MỘT THÀNH VIÊN ECOSPORT MB" id="t34" size="30" oninput="drawall3('canvas3')">
+cỡ chữ <select id="s34" oninput="drawall3('canvas3')">
+  <option value="10">10</option>
+  <option value="20">20</option>
+  <option value="30">30</option>
+  <option value="40" selected>40</option>
+  <option value="50">50</option>
+  <option value="60">60</option>
+  <option value="70">70</option>
+</select>
+phông chữ <select id="f34" oninput="drawall3('canvas3')">
+  <option value="0" selected>Arial</option>
+  <option value="1">Courier</option>
+  <option value="2">Symbol</option>
+  <option value="3">Times</option>
+  <option value="4">Verdana</option>
+</select>
+<br/>
+<a href="#" id="link3" download="decan3.png"><canvas id="canvas3"></canvas></a>
+
+</body>
+</html>

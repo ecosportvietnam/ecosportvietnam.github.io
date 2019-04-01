@@ -1,0 +1,158 @@
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Ecosport MB (Mini SUV)</title>
+<script src="processing.min.js"></script>
+
+<script type="text/processing" data-processing-target="canvas">
+void setup()
+{
+  	size(700,700);
+  	a1 = loadImage("mau4.png");
+  	fonts = [loadFont("arial"), loadFont("courier"), loadFont("cursive"), loadFont("fantasy"), loadFont("Lucida Sans"), loadFont("monospace"), loadFont("serif"), loadFont("symbol"), loadFont("times"), loadFont("verdana")];
+  	R = [255, 249, 218, 32];
+  	G = [255, 195, 37, 26];
+  	B = [255, 45, 44, 26];
+  	textAlign(CENTER);
+    smooth();
+}
+void draw(){  
+}
+void draw1(String t1, String t2,  s1, s2, f1, f2, c1, c2, n)
+{
+	background(R[n],G[n],B[n]);
+	image(a1,0,0,700,700);
+    translate(350, 350);
+    noFill();
+	stroke(R[n],G[n],B[n]);
+	strokeWeight(5);
+    arc(0, 0, 458, 458, 3.4, 6.01);
+    arc(0, 0, 604, 604, 3.34, 6.082);
+    arc(0, 0, 458, 458, 0.25, 2.89);
+    arc(0, 0, 604, 604, 0.188, 2.95);
+        
+    float r = 240;
+    fill(R[c1],G[c1],B[c1]);	
+  	textFont(fonts[f1], s1);
+	float arclength = PI*r/2-textWidth(t1)/2;
+	for (int i = 0; i < t1.length(); i++)
+  	{
+    	char currentChar = t1.charAt(i);
+    	float w = textWidth(currentChar);
+    	arclength += w/2;
+    	float theta = PI + arclength / r;    
+    	pushMatrix();
+    	translate(r*cos(theta), r*sin(theta));
+    	rotate(theta+PI/2); 
+    	text(currentChar,0,0);
+    	popMatrix();
+    	arclength += w/2;
+  	}
+  	
+	r = 294;
+	fill(R[c2],G[c2],B[c2]);	
+  	textFont(fonts[f2], s2); 
+	arclength = PI*r/2-textWidth(t2)/2;
+	for (int i = 0; i < t2.length(); i++)
+  	{
+    	char currentChar = t2.charAt(i);
+    	float w = textWidth(currentChar);
+    	arclength += w/2;
+    	float theta = PI - arclength / r;    
+    	pushMatrix();
+    	translate(r*cos(theta), r*sin(theta));
+    	rotate(theta-PI/2); 
+    	text(currentChar,0,0);
+    	popMatrix();
+    	arclength += w/2;
+  	}
+
+  	translate(-350,-350);
+}
+</script>
+<script type="text/javascript">
+	function drawall1() {
+		var pjs = Processing.getInstanceById("canvas");
+		var t1 = document.getElementById('t1').value;
+		var t2 = document.getElementById('t2').value;
+		var s1 = document.getElementById('s1').value;
+		var s2 = document.getElementById('s2').value;
+		var f1 = document.getElementById('f1').value;
+		var f2 = document.getElementById('f2').value;
+		var c1 = document.getElementById('c1').value;
+		var c2 = document.getElementById('c2').value;
+		var radios = document.getElementsByName('n');
+		for (var i = 0, length = radios.length; i < length; i++) {
+			if (radios[i].checked) {
+				var n = radios[i].value;
+				break;
+				}
+		}
+		pjs.draw1(t1,t2,s1,s2,f1,f2,c1,c2,n); 
+		var dataUrl = document.getElementsByTagName("canvas")[0].toDataURL();
+		dataUrl = dataUrl.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
+		document.getElementById("link1").href = dataUrl;
+	}
+</script>
+</head>
+<body onload="drawall1()">
+<h2>Trang web tạo đề can</h2>
+
+Dòng 1 <input type="textfield" value="NẾU PHIỀN XIN GỌI" id="t1" size="30" oninput="drawall1()"> cỡ <select id="s1" oninput="drawall1()">
+  <option value="45">45</option>
+  <option value="50">50</option>
+  <option value="55">55</option>
+  <option value="60" selected>60</option>
+  <option value="62">62</option>
+  <option value="64">64</option>
+  <option value="66">66</option>
+</select> phông <select id="f1" oninput="drawall1()">
+  <option value="0">Arial</option>
+  <option value="1">Courier</option>
+  <option value="2">Cursive</option>
+  <option value="3">Fantasy</option>
+  <option value="4">Lucida</option>
+  <option value="5">Monospace</option>
+  <option value="6">Serif</option>
+  <option value="7">Symbol</option>
+  <option value="8" selected>Times</option>
+  <option value="9">Verdana</option>
+</select> màu <select id="c1" oninput="drawall1()">
+  <option value="0">Trắng</option>
+  <option value="1">Vàng</option>
+  <option value="2" selected>Đỏ</option>
+  <option value="3">Đen</option>
+</select>
+<br/>
+Dòng 2 <input type="textfield" value="09 . 69 . 69 . 69 . 69" id="t2" size="30" oninput="drawall1()"> cỡ <select id="s2" oninput="drawall1()">
+  <option value="65">65</option>
+  <option value="70">70</option>
+  <option value="75">75</option>
+  <option value="80" selected>80</option>
+  <option value="82">82</option>
+  <option value="84">84</option>
+  <option value="86">86</option>
+</select> phông <select id="f2" oninput="drawall1()">
+  <option value="0" selected>Arial</option>
+  <option value="1">Courier</option>
+  <option value="2">Cursive</option>
+  <option value="3">Fantasy</option>
+  <option value="4">Lucida</option>
+  <option value="5">Monospace</option>
+  <option value="6">Serif</option>
+  <option value="7">Symbol</option>
+  <option value="8">Times</option>
+  <option value="9">Verdana</option>
+</select> màu <select id="c2" oninput="drawall1()">
+  <option value="0">Trắng</option>
+  <option value="1">Vàng</option>
+  <option value="2">Đỏ</option>
+  <option value="3" selected>Đen</option>
+</select>
+<br/>
+Màu nền: Trắng<input type="radio" name="n" value="0" onchange="drawall1()" /> Vàng<input type="radio" name="n" value="1" checked="checked" onchange="drawall1()" /> Đỏ<input type="radio" name="n" value="2" onchange="drawall1()" /> Đen<input type="radio" name="n" value="3" onchange="drawall1()" />
+<br/>
+<a href="#" id="link1" download="decan3.png"><canvas id="canvas"></canvas></a>
+
+</body>
+</html>
