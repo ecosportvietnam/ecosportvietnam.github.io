@@ -1,0 +1,163 @@
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Logo decal - Vietnam Ecosport Club - EMC</title>
+<link rel="stylesheet" href="w3.css">
+<script src="processing.min.js"></script>
+<script type="text/processing" data-processing-target="canvas1">
+void setup()
+{
+  	size(1256,600);
+  	a1 = loadImage("mau1.png");
+  	fonts = [loadFont("arial"), loadFont("courier"), loadFont("symbol"), loadFont("times"), loadFont("verdana")];
+  	R = [255, 249, 218];
+  	G = [255, 195, 37];
+  	B = [255, 45, 44];
+}
+void draw(){  
+}
+void draw1(String t1, String t2, String t3, s1, s2, s3, f1, f2, f3, c1, c2, c3)
+{
+	image(a1,0,0,1256,600);
+
+	fill(R[c1],G[c1],B[c1]);	
+  	textFont(fonts[f1], s1); 
+	w1 = textWidth(t1);
+	text(t1,628-w1/2,310);
+	
+	fill(R[c2],G[c2],B[c2]);	
+  	textFont(fonts[f2], s2); 
+	w2 = textWidth(t2);
+	text(t2,628-w2/2,400);
+	
+	fill(R[c3],G[c3],B[c3]);	
+  	textFont(fonts[f3], s3); 
+	w3 = textWidth(t3);
+	text(t3,628-w3/2,505);
+}
+</script>
+<script type="text/javascript">
+	function drawall1(id) {
+		var pjs = Processing.getInstanceById(id);
+		var t1 = document.getElementById('t11').value;
+		var t2 = document.getElementById('t12').value;
+		var t3 = document.getElementById('t13').value;
+		var s1 = document.getElementById('s11').value;
+		var s2 = document.getElementById('s12').value;
+		var s3 = document.getElementById('s13').value;
+		var f1 = document.getElementById('f11').value;
+		var f2 = document.getElementById('f12').value;
+		var f3 = document.getElementById('f13').value;
+		var c1 = document.getElementById('c11').value;
+		var c2 = document.getElementById('c12').value;
+		var c3 = document.getElementById('c13').value;
+		pjs.draw1(t1,t2,t3,s1,s2,s3,f1,f2,f3,c1,c2,c3); 
+		var dataUrl = document.getElementsByTagName("canvas")[0].toDataURL();
+		dataUrl = dataUrl.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
+		document.getElementById("link1").href = dataUrl;
+	}
+</script>
+</head>
+<body onload="drawall1('canvas1')">
+<div class="navbar">
+
+<div class="w3-bar w3-border w3-card-4 w3-light-grey">
+	<a href="https://www.facebook.com/groups/EcosportMienBac" class="w3-bar-item w3-button">🚙</a>
+  	<a href="index.html" class="w3-bar-item w3-button">Mẫu 1</a>
+  	<a href="mau2.html" class="w3-bar-item w3-button w3-dark-grey">Mẫu 2</a>
+  	<a href="mau3.html" class="w3-bar-item w3-button">Mẫu 3</a>
+  	<a href="mau4.html" class="w3-bar-item w3-button">Mẫu 4</a>
+<div style='float:right'>
+
+<a href="help.html" class="w3-bar-item w3-button">🛈</a>
+
+</div>
+
+</div>
+
+<div class="main"><center>
+<p class="w3-text-dark-grey">Gõ chữ vào các ô dưới, chọn cỡ, phông, màu chữ. Vẽ xong thì click vào ảnh để tải về.</p>
+<table>
+<tr><td>Dòng chữ 1</td>
+<td><input type="textfield" value="XIN LỖI NẾU ĐỖ XE Ở ĐÂY LÀM PHIỀN!" id="t11" size="40" oninput="drawall1('canvas1')"></td>
+<td>cỡ chữ</td>
+<td><select id="s11" oninput="drawall1('canvas1')">
+  <option value="20">20</option>
+  <option value="30">30</option>
+  <option value="40">40</option>
+  <option value="50" selected>50</option>
+  <option value="60">60</option>
+  <option value="70">70</option>
+  <option value="80">80</option>
+</select></td>
+<td>phông chữ</td>
+<td><select id="f11" oninput="drawall1('canvas1')">
+  <option value="0" selected>Arial</option>
+  <option value="1">Courier</option>
+  <option value="2">Symbol</option>
+  <option value="3">Times</option>
+  <option value="4">Verdana</option>
+</select></td>
+<td>màu chữ</td>
+<td><select id="c11" oninput="drawall1('canvas1')">
+  <option value="0" selected>Trắng</option>
+  <option value="1">Vàng</option>
+  <option value="2">Đỏ</option>
+</select></td></tr>
+<tr><td>Dòng chữ 2</td>
+<td><input type="textfield" value="VUI LÒNG GỌI" id="t12" size="40" oninput="drawall1('canvas1')"></td>
+<td>cỡ chữ</td>
+<td><select id="s12" oninput="drawall1('canvas1')">
+  <option value="40">40</option>
+  <option value="50">50</option>
+  <option value="60">60</option>
+  <option value="70" selected>70</option>
+  <option value="80">80</option>
+  <option value="90">90</option>
+  <option value="100">100</option>
+</select></td>
+<td>phông chữ</td>
+<td><select id="f12" oninput="drawall1('canvas1')">
+  <option value="0" selected>Arial</option>
+  <option value="1">Courier</option>
+  <option value="2">Symbol</option>
+  <option value="3">Times</option>
+  <option value="4">Verdana</option>
+</select></td>
+<td>màu chữ</td>
+<td><select id="c12" oninput="drawall1('canvas1')">
+  <option value="0" selected>Trắng</option>
+  <option value="1">Vàng</option>
+  <option value="2">Đỏ</option>
+</select></td></tr>
+<tr><td>Dòng chữ 3</td>
+<td><input type="textfield" value="09.69.69.69.69" id="t13" size="40" oninput="drawall1('canvas1')"></td>
+<td>cỡ chữ</td>
+<td><select id="s13" oninput="drawall1('canvas1')">
+  <option value="60">60</option>
+  <option value="70">70</option>
+  <option value="80">80</option>
+  <option value="90" selected>90</option>
+  <option value="100">100</option>
+  <option value="110">110</option>
+  <option value="120">120</option>
+</select></td>
+<td>phông chữ</td>
+<td><select id="f13" oninput="drawall1('canvas1')">
+  <option value="0" selected>Arial</option>
+  <option value="1">Courier</option>
+  <option value="2">Symbol</option>
+  <option value="3">Times</option>
+  <option value="4">Verdana</option>
+</select></td>
+<td>màu chữ</td>
+<td><select id="c13" oninput="drawall1('canvas1')">
+  <option value="0" selected>Trắng</option>
+  <option value="1">Vàng</option>
+  <option value="2">Đỏ</option>
+</select></td></tr>
+</table>
+<p><a href="#" id="link1" download="decan.png"><canvas id="canvas1"></canvas></a></p>
+</div></center>
+</body>
+</html>
