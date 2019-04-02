@@ -4,7 +4,7 @@
 <title>Logo decal - Vietnam Ecosport Club - EMC</title>
 <link rel="stylesheet" href="w3.css">
 <script src="processing.min.js"></script>
-<script type="text/processing" data-processing-target="canvas2">
+<script type="text/processing" data-processing-target="canvas">
 void setup()
 {
   	size(640,360);
@@ -40,7 +40,11 @@ void draw2(String t1, String t2, String t3, s1, s2, s3, f1, f2, f3, c1, c2, c3,n
 }
 </script>
 <script type="text/javascript">
-	
+function download() {
+var download = document.getElementById("link");
+var image = document.getElementById("canvas").toDataURL("image/png").replace("image/png", "image/octet-stream");
+download.setAttribute("href", image);
+}
 function drawall2(id) {
 		var pjs = Processing.getInstanceById(id);
 		var t1 = document.getElementById('t21').value;
@@ -57,14 +61,11 @@ function drawall2(id) {
 		var c3 = document.getElementById('c23').value;
 		var n = document.getElementById('n2').value;
 		pjs.draw2(t1,t2,t3,s1,s2,s3,f1,f2,f3,c1,c2,c3,n); 
-		var dataUrl = document.getElementsByTagName("canvas")[1].toDataURL();
-		dataUrl = dataUrl.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
-		document.getElementById("link2").href = dataUrl;
 	}
 	
 </script>
 </head>
-<body onload="drawall2('canvas2')">
+<body onload="drawall2('canvas')">
 
 <div class="navbar">
 
@@ -80,9 +81,9 @@ function drawall2(id) {
 </div>
 <center><table>
 <tr><td>Dòng 1</td>
-<td><input type="textfield" value="XIN LỖI NẾU ĐÃ LÀM PHIỀN!" id="t21" size="30" oninput="drawall2('canvas2')" title="gõ chữ vào đây, chọn cỡ, phông, màu ở bên"></td>
+<td><input type="textfield" value="XIN LỖI NẾU ĐÃ LÀM PHIỀN!" id="t21" size="30" oninput="drawall2('canvas')" title="gõ chữ vào đây, chọn cỡ, phông, màu ở bên"></td>
 <td>cỡ</td>
-<td><select id="s21" oninput="drawall2('canvas2')" title="chọn cỡ chữ">
+<td><select id="s21" oninput="drawall2('canvas')" title="chọn cỡ chữ">
   <option value="5">5</option>
   <option value="10">10</option>
   <option value="20">20</option>
@@ -92,7 +93,7 @@ function drawall2(id) {
   <option value="60">60</option>
 </select></td>
 <td>phông</td>
-<td><select id="f21" oninput="drawall2('canvas2')" title="chọn phông chữ">
+<td><select id="f21" oninput="drawall2('canvas')" title="chọn phông chữ">
   <option value="0">Arial</option>
   <option value="1">Courier</option>
   <option value="2">Symbol</option>
@@ -100,22 +101,22 @@ function drawall2(id) {
   <option value="4">Verdana</option>
 </select></td>
 <td>màu</td>
-<td><select id="c21" oninput="drawall2('canvas2')" title="chọn màu chữ">
+<td><select id="c21" oninput="drawall2('canvas')" title="chọn màu chữ">
   <option value="0">Trắng</option>
   <option value="1">Vàng</option>
   <option value="2">Đỏ</option>
   <option value="3" selected>Đen</option>
 </select></td>
-<td rowspan="3">Nền <select id="n2" oninput="drawall2('canvas2')">
+<td rowspan="3">Nền <select id="n2" oninput="drawall2('canvas')">
   <option value="0">Trắng</option>
   <option value="1" selected>Vàng</option>
   <option value="2">Đỏ</option>
   <option value="3">Đen</option>
 </select></td></tr>
 <tr><td>Dòng 2</td>
-<td><input type="textfield" value="VUI LÒNG GỌI" id="t22" size="30" oninput="drawall2('canvas2')" title="gõ chữ vào đây, chọn cỡ, phông, màu ở bên"></td>
+<td><input type="textfield" value="VUI LÒNG GỌI" id="t22" size="30" oninput="drawall2('canvas')" title="gõ chữ vào đây, chọn cỡ, phông, màu ở bên"></td>
 <td>cỡ</td>
-<td><select id="s22" oninput="drawall2('canvas2')" title="chọn cỡ chữ">
+<td><select id="s22" oninput="drawall2('canvas')" title="chọn cỡ chữ">
   <option value="10">10</option>
   <option value="20">20</option>
   <option value="30">30</option>
@@ -125,7 +126,7 @@ function drawall2(id) {
   <option value="70">70</option>
 </select></td>
 <td>phông</td>
-<td><select id="f22" oninput="drawall2('canvas2')" title="chọn phông chữ">
+<td><select id="f22" oninput="drawall2('canvas')" title="chọn phông chữ">
   <option value="0">Arial</option>
   <option value="1">Courier</option>
   <option value="2">Symbol</option>
@@ -133,16 +134,16 @@ function drawall2(id) {
   <option value="4">Verdana</option>
 </select></td>
 <td>màu</td>
-<td><select id="c22" oninput="drawall2('canvas2')" title="chọn màu chữ">
+<td><select id="c22" oninput="drawall2('canvas')" title="chọn màu chữ">
   <option value="0">Trắng</option>
   <option value="1">Vàng</option>
   <option value="2">Đỏ</option>
   <option value="3" selected>Đen</option>
 </select></td></tr>
 <tr><td>Dòng 3</td>
-<td><input type="textfield" value="0969.969.696" id="t23" size="30" oninput="drawall2('canvas2')" title="gõ chữ vào đây, chọn cỡ, phông, màu ở bên"></td>
+<td><input type="textfield" value="0969.969.696" id="t23" size="30" oninput="drawall2('canvas')" title="gõ chữ vào đây, chọn cỡ, phông, màu ở bên"></td>
 <td>cỡ</td>
-<td><select id="s23" oninput="drawall2('canvas2')" title="chọn cỡ chữ">
+<td><select id="s23" oninput="drawall2('canvas')" title="chọn cỡ chữ">
   <option value="40">40</option>
   <option value="50">50</option>
   <option value="60">60</option>
@@ -152,7 +153,7 @@ function drawall2(id) {
   <option value="100">100</option>
 </select></td>
 <td>phông</td>
-<td><select id="f23" oninput="drawall2('canvas2')" title="chọn phông chữ">
+<td><select id="f23" oninput="drawall2('canvas')" title="chọn phông chữ">
   <option value="0" selected>Arial</option>
   <option value="1">Courier</option>
   <option value="2">Symbol</option>
@@ -160,7 +161,7 @@ function drawall2(id) {
   <option value="4">Verdana</option>
 </select></td>
 <td>màu</td>
-<td><select id="c23" oninput="drawall2('canvas2')" title="chọn màu chữ">
+<td><select id="c23" oninput="drawall2('canvas')" title="chọn màu chữ">
   <option value="0">Trắng</option>
   <option value="1">Vàng</option>
   <option value="2">Đỏ</option>
@@ -171,7 +172,7 @@ function drawall2(id) {
 </div>
 <div class="main"><center>
 <br/><br/><br/>
-<p><a href="#" id="link2" download="decan.png" title="Gõ chữ vào các ô trên, chọn cỡ, phông, màu chữ & màu nền."><canvas id="canvas2"></canvas></a></p>
+<p><a id="link" download="decan.png" title="Gõ chữ vào các ô trên, chọn cỡ, phông, màu chữ & màu nền."><canvas id="canvas" onclick="download();"></canvas></a></p>
 </center></div>
 </body>
 </html>
