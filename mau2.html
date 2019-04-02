@@ -10,13 +10,13 @@ void setup()
   	size(1256,600);
   	a1 = loadImage("mau1.png");
   	fonts = [loadFont("arial"), loadFont("courier"), loadFont("symbol"), loadFont("times"), loadFont("verdana")];
-  	R = [255, 249, 218];
-  	G = [255, 195, 37];
-  	B = [255, 45, 44];
+  	R = [255, 249, 218,32];
+  	G = [255, 195, 37,26];
+  	B = [255, 45, 44,26];
 }
 void draw(){  
 }
-void draw1(String t1, String t2, String t3, s1, s2, s3, f1, f2, f3, c1, c2, c3)
+void draw2(String t1, String t2, String t3, s1, s2, s3, f1, f2, f3, c1, c2, c3)
 {
 	image(a1,0,0,1256,600);
 
@@ -42,7 +42,7 @@ var download = document.getElementById("link");
 var image = document.getElementById("canvas").toDataURL("image/png").replace("image/png", "image/octet-stream");
 download.setAttribute("href", image);
 }
-	function drawall() {
+function drawall() {
 		var pjs = Processing.getInstanceById('canvas');
 		var t1 = document.getElementById('t11').value;
 		var t2 = document.getElementById('t12').value;
@@ -56,11 +56,13 @@ download.setAttribute("href", image);
 		var c1 = document.getElementById('c11').value;
 		var c2 = document.getElementById('c12').value;
 		var c3 = document.getElementById('c13').value;
-		pjs.draw1(t1,t2,t3,s1,s2,s3,f1,f2,f3,c1,c2,c3); 
+		pjs.draw2(t1,t2,t3,s1,s2,s3,f1,f2,f3,c1,c2,c3); 
 	}
+	
 </script>
 </head>
 <body onload="drawall()">
+
 <div class="navbar">
 
 <div class="w3-bar w3-border w3-card-4 w3-light-grey">
@@ -156,7 +158,7 @@ download.setAttribute("href", image);
 </div>
 <div class="main"><center>
 <br/><br/><br/>
-<p><a id="link" download="decan.png" title="Gõ chữ vào các ô trên, chọn cỡ, phông, màu chữ. Rồi click vào ảnh này để tải về."><canvas id="canvas" onclick="download();></canvas></a></p>
+<p><a id="link" download="decan.png" title="Gõ chữ vào các ô trên, chọn cỡ, phông, màu chữ. Rồi click vào ảnh này để tải về."><canvas id="canvas" onclick="download();"></canvas></a></p>
 </center></div>
 </body>
 </html>
