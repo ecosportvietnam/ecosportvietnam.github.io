@@ -71,6 +71,11 @@ void draw1(String t1, String t2,  s1, s2, f1, f2, c1, c2, n)
 }
 </script>
 <script type="text/javascript">
+function download() {
+var download = document.getElementById("link");
+var image = document.getElementById("canvas").toDataURL("image/png").replace("image/png", "image/octet-stream");
+download.setAttribute("href", image);
+}
 	function drawall1() {
 		var pjs = Processing.getInstanceById("canvas");
 		var t1 = document.getElementById('t1').value;
@@ -83,9 +88,6 @@ void draw1(String t1, String t2,  s1, s2, f1, f2, c1, c2, n)
 		var c2 = document.getElementById('c2').value;
 		var n = document.getElementById('n').value;
 		pjs.draw1(t1,t2,s1,s2,f1,f2,c1,c2,n); 
-		var dataUrl = document.getElementsByTagName("canvas")[0].toDataURL();
-		dataUrl = dataUrl.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
-		document.getElementById("link1").href = dataUrl;
 	}
 </script>
 </head>
@@ -175,9 +177,9 @@ void draw1(String t1, String t2,  s1, s2, f1, f2, c1, c2, n)
 </select></td></tr>
 </table>
 </center></div>
-<div class="main">
+<div class="main"><center>
 <br/>
-<p class="w3-center"><a href="#" id="link1" download="decan.png"  title="Gõ chữ vào các ô trên, chọn cỡ, phông, màu chữ & màu nền."><canvas id="canvas"></canvas></a></p>
+<a id="link" download="decan.png"  title="Gõ chữ vào các ô trên, chọn cỡ, phông, màu chữ & màu nền. Rồi click vào ảnh này để tải về."><canvas id="canvas" onclick="download();"></canvas></a></center>
 </div>
 </body>
 </html>

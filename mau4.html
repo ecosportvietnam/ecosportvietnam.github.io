@@ -4,7 +4,7 @@
 <title>Logo decal - Vietnam Ecosport Club - EMC</title>
 <link rel="stylesheet" href="w3.css">
 <script src="processing.min.js"></script>
-<script type="text/processing" data-processing-target="canvas3">
+<script type="text/processing" data-processing-target="canvas">
 void setup()
 {
   	size(1255,300);
@@ -37,8 +37,13 @@ void draw3(String t1, String t2, String t3, String t4, s1, s2, s3, s4, f1, f2, f
 }
 </script>
 <script type="text/javascript">
-	function drawall3(id) {
-		var pjs = Processing.getInstanceById(id);
+function download() {
+var download = document.getElementById("link");
+var image = document.getElementById("canvas").toDataURL("image/png").replace("image/png", "image/octet-stream");
+download.setAttribute("href", image);
+}
+	function drawall() {
+		var pjs = Processing.getInstanceById('canvas');
 		var t1 = document.getElementById('t31').value;
 		var t2 = document.getElementById('t32').value;
 		var t3 = document.getElementById('t33').value;
@@ -52,13 +57,10 @@ void draw3(String t1, String t2, String t3, String t4, s1, s2, s3, s4, f1, f2, f
 		var f3 = document.getElementById('f33').value;
 		var f4 = document.getElementById('f34').value;
 		pjs.draw3(t1,t2,t3,t4,s1,s2,s3,s4,f1,f2,f3,f4); 
-		var dataUrl = document.getElementsByTagName("canvas")[2].toDataURL();
-		dataUrl = dataUrl.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
-		document.getElementById("link3").href = dataUrl;
 	}
 </script>
 </head>
-<body onload="drawall3('canvas3')">
+<body onload="drawall()">
 <div class="navbar">
 
 <div class="w3-bar w3-border w3-card-4 w3-light-grey">
@@ -75,9 +77,9 @@ void draw3(String t1, String t2, String t3, String t4, s1, s2, s3, s4, f1, f2, f
 <center>
 <table>
 <tr><td>Dòng 1</td>
-<td><input type="textfield" value="XIN LỖI ĐÃ LÀM PHIỀN" id="t31" size="34" oninput="drawall3('canvas3')"></td>
+<td><input type="textfield" value="XIN LỖI ĐÃ LÀM PHIỀN" id="t31" size="34" oninput="drawall()"></td>
 <td>cỡ</td>
-<td><select id="s31" oninput="drawall3('canvas3')">
+<td><select id="s31" oninput="drawall()">
   <option value="20">20</option>
   <option value="30">30</option>
   <option value="40">40</option>
@@ -87,7 +89,7 @@ void draw3(String t1, String t2, String t3, String t4, s1, s2, s3, s4, f1, f2, f
   <option value="80">80</option>
 </select></td>
 <td>phông</td>
-<td><select id="f31" oninput="drawall3('canvas3')">
+<td><select id="f31" oninput="drawall()">
   <option value="0" selected>Arial</option>
   <option value="1">Courier</option>
   <option value="2">Symbol</option>
@@ -95,9 +97,9 @@ void draw3(String t1, String t2, String t3, String t4, s1, s2, s3, s4, f1, f2, f
   <option value="4">Verdana</option>
 </select></td></tr>
 <tr><td>Dòng 2</td>
-<td><input type="textfield" value="GỌI 0912.345.678" id="t32" size="34" oninput="drawall3('canvas3')"></td>
+<td><input type="textfield" value="GỌI 0912.345.678" id="t32" size="34" oninput="drawall()"></td>
 <td>cỡ</td>
-<td><select id="s32" oninput="drawall3('canvas3')">
+<td><select id="s32" oninput="drawall()">
   <option value="40">40</option>
   <option value="50">50</option>
   <option value="60">60</option>
@@ -107,7 +109,7 @@ void draw3(String t1, String t2, String t3, String t4, s1, s2, s3, s4, f1, f2, f
   <option value="100">100</option>
 </select></td>
 <td>phông</td>
-<td><select id="f32" oninput="drawall3('canvas3')">
+<td><select id="f32" oninput="drawall()">
   <option value="0" selected>Arial</option>
   <option value="1">Courier</option>
   <option value="2">Symbol</option>
@@ -115,9 +117,9 @@ void draw3(String t1, String t2, String t3, String t4, s1, s2, s3, s4, f1, f2, f
   <option value="4">Verdana</option>
 </select></td></tr>
 <tr><td>Dòng 3</td>
-<td><input type="textfield" value="30A 999.99" id="t33" size="34" oninput="drawall3('canvas3')"></td>
+<td><input type="textfield" value="30A 999.99" id="t33" size="34" oninput="drawall()"></td>
 <td>cỡ</td>
-<td><select id="s33" oninput="drawall3('canvas3')">
+<td><select id="s33" oninput="drawall()">
   <option value="30">30</option>
   <option value="40">40</option>
   <option value="50">50</option>
@@ -127,7 +129,7 @@ void draw3(String t1, String t2, String t3, String t4, s1, s2, s3, s4, f1, f2, f
   <option value="90">90</option>
 </select></td>
 <td>phông</td>
-<td><select id="f33" oninput="drawall3('canvas3')">
+<td><select id="f33" oninput="drawall()">
   <option value="0" selected>Arial</option>
   <option value="1">Courier</option>
   <option value="2">Symbol</option>
@@ -135,9 +137,9 @@ void draw3(String t1, String t2, String t3, String t4, s1, s2, s3, s4, f1, f2, f
   <option value="4">Verdana</option>
 </select></td></tr>
 <tr><td>Dòng 4</td>
-<td><input type="textfield" value="MỘT THÀNH VIÊN ECOSPORT MB" id="t34" size="34" oninput="drawall3('canvas3')"></td>
+<td><input type="textfield" value="MỘT THÀNH VIÊN ECOSPORT MB" id="t34" size="34" oninput="drawall()"></td>
 <td>cỡ</td>
-<td><select id="s34" oninput="drawall3('canvas3')">
+<td><select id="s34" oninput="drawall()">
   <option value="10">10</option>
   <option value="20">20</option>
   <option value="30">30</option>
@@ -147,7 +149,7 @@ void draw3(String t1, String t2, String t3, String t4, s1, s2, s3, s4, f1, f2, f
   <option value="70">70</option>
 </select></td>
 <td>phông</td>
-<td><select id="f34" oninput="drawall3('canvas3')">
+<td><select id="f34" oninput="drawall()">
   <option value="0" selected>Arial</option>
   <option value="1">Courier</option>
   <option value="2">Symbol</option>
@@ -158,7 +160,7 @@ void draw3(String t1, String t2, String t3, String t4, s1, s2, s3, s4, f1, f2, f
 </div>
 <div class="main"><center>
 <br/><br/><br/><br/>
-<p><a href="#" id="link3" download="decan.png" title="Gõ chữ vào các ô trên, chọn cỡ, phông chữ."><canvas id="canvas3"></canvas></a></p>
+<p><a id="link" download="decan.png" title="Gõ chữ vào các ô trên, chọn cỡ, phông chữ. Rồi click vào ảnh này để tải về."><canvas id="canvas" onclick="download();"></canvas></a></p>
 </center></div>
 </body>
 </html>
